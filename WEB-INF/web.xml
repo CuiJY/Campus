@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+<display-name></display-name>
+<servlet>
+    <servlet-name>BlogLet</servlet-name>
+	<servlet-class>com.servlet.BlogLet</servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>UserLet</servlet-name>
+	<servlet-class>com.servlet.UserLet</servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>ForumLet</servlet-name>
+	<servlet-class>com.servlet.ForumLet</servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>ForumPublishLet</servlet-name>
+	<servlet-class>com.servlet.ForumPublishLet</servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>BlogPublishLet</servlet-name>
+	<servlet-class>com.servlet.BlogPublishLet</servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>LogLet</servlet-name>
+	<servlet-class>com.servlet.LogLet</servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>RegLet</servlet-name>
+	<servlet-class>com.servlet.RegLet</servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>UploadPicLet</servlet-name>
+	<servlet-class>com.servlet.UploadPicLet</servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>LoadPicLet</servlet-name>
+	<servlet-class>com.servlet.LoadPicLet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>BlogLet</servlet-name>
+	<url-pattern>/BlogLet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>ForumLet</servlet-name>
+	<url-pattern>/ForumLet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>UserLet</servlet-name>
+	<url-pattern>/UserLet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>ForumPublishLet</servlet-name>
+	<url-pattern>/ForumPublishLet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>BlogPublishLet</servlet-name>
+	<url-pattern>/BlogPublishLet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>LogLet</servlet-name>
+	<url-pattern>/LogLet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>RegLet</servlet-name>
+	<url-pattern>/RegLet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>UploadPicLet</servlet-name>
+	<url-pattern>/UploadPicLet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>LoadPicLet</servlet-name>
+	<url-pattern>/LoadPicLet</url-pattern>
+</servlet-mapping>
+
+
+<welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+</welcome-file-list>
+</web-app>

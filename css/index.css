@@ -1,0 +1,569 @@
+body {
+	height: 100%;
+	width: 100%;
+}
+#technology, #video, #announcement, #weibo, #program {
+	padding: 50px;
+}
+
+/* basic styles */
+.nav-menu {
+	display: block;
+	padding-top: 20px;
+}
+.nav-menu > li {
+	display: inline;
+	float: left;
+	border-right: 1px solid #94c0be;
+}
+.nav-menu > li:last-child {
+	border-right: none;
+}
+.nav-menu li a {
+	color: #fff;
+	display: block;
+	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	overflow: visible;
+	line-height: 20px;
+	font-size: 20px;
+	padding: 15px 30px 15px 31px;
+}
+
+/* animation domination */
+.three-d {
+
+	/* 设置3D舞台布景 */
+	-webkit-perspective: 200px;
+	-moz-perspective: 200px;
+	-ms-perspective: 200px;
+	-o-perspective: 200px;
+	perspective: 200px;			  /*设置3D舞台布景过渡效果*/
+	-webkit-transition: all .07s linear;
+	-moz-transition: all .07s linear;
+	-ms-transition: all .07s linear;
+	-o-transition: all .07s linear;
+	transition: all .07s linear;
+	position: relative;
+}
+.three-d:not(.active):hover {
+	cursor: pointer;
+}
+
+/*给不是当前状态的3D舞台的悬浮与聚焦状态设置变形效果*/
+.three-d:not(.active):hover .three-d-box, .three-d:not(.active):focus .three-d-box {
+	-wekbit-transform: translateZ(-25px) rotateX(90deg);
+	-moz-transform: translateZ(-25px) rotateX(90deg);
+	-o-transform: translateZ(-25px) rotateX(90deg);
+	-ms-transform: translateZ(-25px) rotateX(90deg);
+	transform: translateZ(-25px) rotateX(90deg);
+}
+.three-d-box {
+
+	/*给3D舞台中“.three-d-box”设置过渡与变形效果*/
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+	-webkit-transform: translatez(-25px);
+	-moz-transform: translatez(-25px);
+	-ms-transform: translatez(-25px);
+	-o-transform: translatez(-25px);
+	transform: translatez(-25px);
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-pointer-events: none;
+	-moz-pointer-events: none;
+	-ms-pointer-events: none;
+	-o-pointer-events: none;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/*设置3D前，与3D后变形效果*/
+.front {
+	-webkit-transform: rotatex(0deg) translatez(25px);
+	-moz-transform: rotatex(0deg) translatez(25px);
+	-ms-transform: rotatex(0deg) translatez(25px);
+	-o-transform: rotatex(0deg) translatez(25px);
+	transform: rotatex(0deg) translatez(25px);
+}
+.back {
+	-webkit-transform: rotatex(-90deg) translatez(25px);
+	-moz-transform: rotatex(-90deg) translatez(25px);
+	-ms-transform: rotatex(-90deg) translatez(25px);
+	-o-transform: rotatex(-90deg) translatez(25px);
+	transform: rotatex(-90deg) translatez(25px);
+	color: #FFE7C4;
+}
+.front, .back {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 15px 30px 15px 31px;
+	color: white;
+	-webkit-pointer-events: none;
+	-moz-pointer-events: none;
+	-ms-pointer-events: none;
+	-o-pointer-events: none;
+	pointer-events: none;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	background: -webkit-linear-gradient(rgb(63, 184, 211), rgb(25, 137, 185), rgb(6, 91, 158));
+	background: -o-linear-gradient(rgb(63, 184, 211), rgb(25, 137, 185), rgb(6, 91, 158));
+	background: -moz-linear-gradient(rgb(63, 184, 211), rgb(25, 137, 185), rgb(6, 91, 158));
+	background: linear-gradient(rgb(63, 184, 211), rgb(25, 137, 185), rgb(6, 91, 158));
+	filter: alpha(opacity=80);
+}
+
+/*设置当前状态与悬浮状态下的背景效果*/
+.nav-menu li .active .front, .nav-menu li .active .back, .nav-menu li a:hover .front, .nav-menu li a:hover .back {
+	-webkit-background-size: 5px 5px;
+	background-size: 5px 5px;
+	background-position: 0 0, 30px 30px;
+	background: -webkit-linear-gradient(rgb(63, 184, 211), rgb(25, 137, 185), rgb(6, 91, 158));
+	background: -o-linear-gradient(rgb(63, 184, 211), rgb(25, 137, 185), rgb(6, 91, 158));
+	background: -moz-linear-gradient(rgb(63, 184, 211), rgb(25, 137, 185), rgb(6, 91, 158));
+	background: linear-gradient(rgb(63, 184, 211), rgb(25, 137, 185), rgb(6, 91, 158));
+	filter: alpha(opacity=80);
+}
+.nav-menu ul {
+	position: absolute;
+	text-align: left;
+	line-height: 40px;
+	font-size: 14px;
+	width: 200px;
+	-webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+	-ms-transition: all 0.3s ease-in;
+	-o-transition: all 0.3s ease-in;
+	transition: all 0.3s ease-in;
+	-webkit-transform-origin: 0px 0px;
+	-moz-transform-origin: 0px 0px;
+	-ms-transform-origin: 0px 0px;
+	-o-transform-origin: 0px 0px;
+	transform-origin: 0px 0px;
+	-webkit-transform: rotateX(-90deg);
+	-moz-transform: rotateX(-90deg);
+	-ms-transform: rotateX(-90deg);
+	-o-transform: rotateX(-90deg);
+	transform: rotateX(-90deg);
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.tech-sort li {
+	border: 1px solid gray;
+}
+.tech-sort li:hover, .tech-sort .active {
+	background-color: orange;
+}
+.last-article h3 {
+	color: black;
+}
+.last-article .iconfont {
+	padding: 5px;
+	background-color: orange;
+	color: white;
+}
+.featured-article h4 {
+	color: orange;
+}
+.Thumbnail img {
+	height: 80px;
+	width: 100px;
+}
+.Thumbnail {
+	float: left;
+	padding: 0 15px 0 0;
+}
+.describe .time {
+	color: #808080;
+	font-size: 11px;
+	font-weight: bold;
+}
+.describe .note {
+	color: #f90;
+}
+.describe .author {
+	color: #f90 !important;
+	font-size: 11px;
+	font-weight: bold;
+}
+.describe .outline {
+	color: #000;
+	line-height: 23px;
+	max-height: 50px;
+	overflow: hidden;
+}
+.article-list {
+	padding-top: 40px;
+}
+.atc-list .iconfont {
+	color: orange;
+	font-size: 80px;
+}
+.more {
+	margin: 28px 22px 2px 0;
+	text-align: right;
+	border-top: 1px solid #ccc;
+}
+.hot .iconfont {
+	color: red;
+	margin: 5px;
+}
+.hot h3, .question h3 {
+	color: #000;
+}
+.hot-list, .question-list {
+	list-style-type: square;
+	color: #000;
+}
+.question .iconfont {
+	color: orange;
+	margin: 5px;
+}
+.ad img {
+	width: 180px;
+	height: 100px;
+}
+
+/*#video*/
+.preview-list ul {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+.preview-list {
+	position: relative;
+	height: 220px;
+	width: 440px;
+	overflow: hidden;
+	margin-top: 30px;
+}
+.preview-list img {
+	height: 220px;
+	width: 440px;
+}
+.preview-list ul li {
+	position: absolute;
+	float: left;
+	list-style: none;
+}
+.preview-list ul li.select {
+	display: block;
+}
+.clear {
+	overflow: hidden;
+	clear: both;
+	width: 0px;
+	height: 0px;
+}
+.list-dot {
+	text-align: center;
+	position: relative;
+	left: 80px;
+	bottom: 30px;
+}
+.list-dot span {
+	border-radius: 10px;
+	font: normal normal bold 12px/15px "Microsoft YaHei";
+	color: #FFF;
+	margin-left: 5px;
+	padding: 3px 6px 3px 6px;
+	background-color: #F90;
+	cursor: pointer;
+}
+.list-dot span.onselect {
+	background-color: #F00;
+}
+.video-list ul {
+	list-style: none;
+}
+.video-list ul li {
+	float: left;
+	padding: 0px 10px 40px 10px;
+	position: relative;
+}
+.video-list ul li img {
+	width: 168px;
+	height: 105px;
+}
+.video-list .img-info {
+	position: absolute;
+	width: 168px;
+	height: 10px;
+	bottom: 25px;
+	left: 5px;
+	color: black;
+	font-size: 8px;
+	font-family: "Microsoft YaHei";
+}
+.img-info:hover, .video-rank ul li a:hover {
+	color: #00a1d6;
+	text-decoration: none;
+}
+
+/**/
+.video-icon .iconfont {
+	font-size: 40px;
+	color: #00a1d6;
+	position: relative;
+}
+.new-video h2, .video-rank h3 {
+	position: absolute;
+	left: 70px;
+	top: -10px;
+}
+.video-rank ul {
+	list-style: none;
+	float: left;
+}
+.video-rank ul li a {
+	color: black;
+	padding-left: 10px;
+}
+.number {
+	background-color: #b8c0cc;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 12px;
+	font-weight: bolder;
+	height: 18px;
+	line-height: 17px;
+	min-width: 12px;
+	padding: 0 5px;
+	text-align: center;
+}
+.hot-num {
+	background: #f25d8e none repeat scroll 0 0;
+}
+
+/*announcement.css*/
+.anno .middle {
+	border-top: 1px solid #ccc;
+}
+.big>div:first-child, .middle-info {
+	margin: 20px;
+	border-right: 1px solid #ccc;
+}
+.big-info img {
+	width: 215px;
+	height: 161px;
+}
+.big-info p {
+	display: block;
+	height: 168px;
+	text-overflow: clip;
+}
+.news {
+	padding: 20px 0  0 20px;
+	border-left: 1px solid #ccc;
+}
+.news-icon .iconfont {
+	font-size: 40px;
+	color: #23238e;
+	position: relative;
+}
+.news h2 {
+	position: absolute;
+	left: 80px;
+	top: 12px;
+}
+
+/*weibo.css*/
+.weibo-list ul:first-child, .hot-user ul {
+	padding: 10px;
+	list-style: none;
+}
+.weibo-desc {
+	padding: 20px;
+	background: #f2f5f7;
+	margin-top: 20px;
+}
+.weibo-content {
+	line-height: 23px;
+	max-height: 50px;
+	overflow: hidden;
+}
+.img-list {
+	list-style: none;
+}
+.img-list li {
+	float: left;
+	padding-right: 10px;
+}
+.img-list li img {
+	width: 190px;
+	height: 108px;
+}
+.weibo-info {
+	padding-top: 5px;
+	color: #808080;
+}
+.weibo-info .left img {
+	width: 18px;
+	height: 18px;
+}
+.weibo-info .right {
+	float: right;
+	position: relative;
+	top: -20px;
+}
+.hot-user h3 {
+	color: #5c4033;
+	border-bottom: 1px solid #b87333;
+}
+.hot-user .num {
+	background-color: #DF3E3E;
+	border-radius: 50%;
+	color: white;
+	font-size: 12px;
+	font-weight: bolder;
+	height: 18px;
+	line-height: 17px;
+	min-width: 12px;
+	padding: 0 5px;
+	text-align: center;
+}
+.hot-user li img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin: 10px 20px 0 20px;
+}
+.hot-user .user-rank {
+	position: relative;
+	top: 20px;
+	float: right;
+}
+
+/*program.css*/
+ul, li {
+	list-style: none;
+}
+.piclist li a img {
+	border: none;
+	width: 220px;
+	height: 105px;
+}
+.box {
+	width: 980px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	padding-top: 50px;
+}
+.picbox {
+	width: 980px;
+	height: 115px;
+	overflow: hidden;
+	position: relative;
+}
+.piclist {
+	height: 115px;
+	position: absolute;
+	left: 0px;
+	top: 0px
+}
+.piclist li {
+	background: #eee;
+	margin-right: 20px;
+	padding: 5px;
+	float: left;
+}
+.swaplist {
+	position: absolute;
+	left: -3000px;
+	top: 0px
+}
+.og_prev, .og_next {
+	width: 30px;
+	height: 50px;
+	background: url(../images/icon.png) no-repeat;
+	background: url(../images/icon_ie6.png) no-repeat\9;
+	position: absolute;
+	top: 83px;
+	z-index: 99;
+	cursor: pointer;
+	filter: alpha(opacity=70);
+	opacity: 0.7;
+}
+.og_prev {
+	background-position: 0 -60px;
+	left: 4px;
+}
+.og_next {
+	background-position: 0 0;
+	right: 4px;
+}
+
+/*weibo.css*/
+.current-user .btn {
+	height: 70px;
+	font-size: 14px;
+}
+#weibo_text {
+	background-color: #f4f5f7;
+}
+#weibo_text:focus, #weibo_text:hover {
+	background-color: #fff;
+}
+.weibo {
+	border-bottom: 1px solid #CCC;
+	padding-bottom: 40px;
+}
+
+/*.current-user img {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+margin: 10px 20px 0 20px;
+}*/
+#fileElem {
+	display: none;
+}
+#fileSelect {
+	position: relative;
+	top: 0;
+	left: 50px;
+	cursor: pointer;	/*text-align: center;	border: 1px solid #ccc;*/
+}
+.add-img {
+	display: none;
+	color: gray;
+	font-size: 18px;
+}
+#fileSelect:hover .add-img {
+	display: inline-block;
+}
+#fileSelect .iconfont {
+	font-size: 30px;
+	color: #ccc;
+}
+#preview {
+	position: relative;
+	left: 50px;
+	top: -10px;
+}
+#preview img {
+	width: 45px;
+	height: 45px;
+}
